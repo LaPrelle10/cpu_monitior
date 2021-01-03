@@ -1,0 +1,48 @@
+# Intel Intelligent Systems
+
+# Overview : 
+ Intel inside processor built into chromebook computer system built "2018" 
+
+# Algorithm :
+
+Highly-optimized implementations of the Fast SHA-256 cryptographic hash algorithm, which provide industry leading performance on a range of Intel® processors for a single data buffer
+consisting of an arbitrary number of data blocks. 
+
+SHA-256 is one member of a family of cryptographic hash functions that together are known as SHA-2. The basic computation for the algorithm takes a block 
+of input data that is "512_bits", ("64 bytes") and a state vector that is "256_bits" , ("32 bytes") in size, and it produces a modified state vector.It is a 
+follow-on to the earlier hash algorithms "MD5" and "SHA-1", and it is becoming increasingly important for secure internet traffic and other authentication 
+problems. As the Fast "SHA-256" processing involves a large amount of computations, it is critical that applications use the most efficient
+implementations available.
+
+The standard for the "SHA-2" algorithm specifies a procedure for adding padding to the input data to make it an integral number of ("64-byte") blocks in length.
+This happens at a higher level than the code described in this document. This paper is only concerned with updating the hash state values
+for any integral number of blocks.
+
+# Hash Breakdown :
+
+Figure 1 :
+Steps in Fast SHA-256 Algorithm processing
+Input Message:
+  
+                   ["Block 0"] :              Block 1 :             ["Block 2"] :           ["Block 3"] :
+
+                 
+               ["Message Scheduler"]   ["Message Scheduler"]   ["Message Scheduler"]    ["Message Scheduler"]
+
+digest_in--
+          |     
+          ------->["Rounds"]               ["Rounds"]              ["Rounds"]               ["Rounds"] digest_out---
+                                                                                                                    |
+                                                                                                                    ---->
+# Rounds_Digest
+
+Digest Out The first step is a “message scheduler” that takes the input 16 DWORDs and
+computes 48 new DWORDs. Together with the original 16 DWORDs, these
+form a vector of 64 DWORDs that is the input to the second step.
+This second step consists of 64 “rounds” where the form of the calculations in
+each round is the same. Each round takes as input the 8 state DWORDs, the
+corresponding input DWORD (after scheduling), and a round-specific
+constant.
+After all 64 rounds have executed, the resulting state vector is added to the
+original state vector, and this results in the new state vector. If the input
+consists of multiple blocks, this process is repeated for each block.
