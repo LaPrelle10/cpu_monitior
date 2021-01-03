@@ -1,0 +1,9 @@
+# System Dashboard 
+
+Monitor built using a website that is compatiable with the featured system allowing you to make a dashboard to properly wotk and monitor
+your cpu system mining project. 
+
+G_Cloud.com ; firebase.com ; Garafana.com a few sites to use for a project building layout. Allow api connection for monitor system
+
+Dashboard feat. "mining_speed" , "hash" , "blocks_sizes", "path" weather its "link" , "HTTP_HTTPS" , "API" , address , "pub_key" , "priv_key" dashboard systems are built using the websites
+that have a ability to produce and make a dashboard for users to watch there work 
